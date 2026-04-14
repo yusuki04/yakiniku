@@ -3,13 +3,14 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>焼肉おすすめ診断</title>
+
 <style>
 body {
     font-family: sans-serif;
     text-align: center;
     margin: 0;
-    background: #0d0d0d;   /* 黒 */
-    color: white;       /* 文字を白に */
+    background: #111;
+    color: white;
 }
 
 h1 {
@@ -23,9 +24,9 @@ h1 {
     padding: 20px;
 }
 
-img {
-    width: 100%;
-    max-width: 500px;
+#question {
+    font-size: 28px;
+    margin-top: 40px;
 }
 
 button {
@@ -38,17 +39,25 @@ button {
     color: white;
 }
 
-button {
-    background: #e74c3c;  /* 赤を少し強めに */
+button.no {
+    background: #555;
 }
 
 .result {
     margin-top: 20px;
     padding: 20px;
-    background: #222;   /* 少し明るい黒 */
+    background: #222;
     border-radius: 10px;
 }
+
+img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
 </style>
+
 </head>
 
 <body>
@@ -73,7 +82,6 @@ let step = 1;
 
 function answer(choice) {
     const q = document.getElementById("question");
-    const res = document.getElementById("result");
 
     if(step === 1) {
         if(choice === "yes") {
@@ -87,26 +95,45 @@ function answer(choice) {
 
     else if(step === 2) {
         if(choice === "yes") {
-            showResult("🥓 脂多め", "カルビ・上ロースがおすすめ！");
+            showResult("脂多め", "カルビ・上ロース");
         } else {
-            showResult("🥩 バランス", "ロース・ハラミがおすすめ！");
+            showResult("バランス", "ロース・ハラミ");
         }
     }
 
     else if(step === 3) {
         if(choice === "yes") {
-            showResult("🍖 赤身", "ランプ・イチボがおすすめ！");
+            showResult("赤身", "ランプ・イチボ");
         } else {
-            showResult("🍗 食感派", "タン・ミノがおすすめ！");
+            showResult("食感派", "タン・ミノ");
         }
     }
 }
 
-function showResult(title, text) {
+function showResult(type, menu) {
     document.getElementById("buttons").style.display = "none";
     const res = document.getElementById("result");
     res.style.display = "block";
-    res.innerHTML = "<h2>" + title + "</h2><p>" + text + "</p>";
+
+    let img = "";
+
+    if(type === "脂多め") {
+        img = "https://source.unsplash.com/300x200/?yakiniku";
+    } else if(type === "バランス") {
+        img = "https://source.unsplash.com/300x200/?beef";
+    } else if(type === "赤身") {
+        img = "https://source.unsplash.com/300x200/?steak";
+    } else {
+        img = "https://source.unsplash.com/300x200/?tongue";
+    }
+
+    res.innerHTML = `
+        <h2>${type}</h2>
+        <img src="${img}">
+        <p>${menu}</p>
+        <p>🔥 800円〜</p>
+        <button onclick="location.reload()">もう一回診断</button>
+    `;
 }
 </script>
 
