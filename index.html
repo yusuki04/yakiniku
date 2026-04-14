@@ -6,58 +6,86 @@
 
 <style>
 body {
-    font-family: sans-serif;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
     text-align: center;
     margin: 0;
-    background: #111;
-    color: white;
+    background: linear-gradient(to bottom, #0b0b0b, #111, #181818);
+    color: #f5f1e8;
 }
 
 h1 {
-    background: #3b2a1f;
-    color: white;
-    padding: 20px;
+    background: linear-gradient(to right, #1a120c, #2a1b12, #1a120c);
+    color: #f3e2b3;
+    padding: 28px 20px;
     margin: 0;
+    font-size: 48px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
 .container {
-    padding: 20px;
+    padding: 48px 24px 64px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 #question {
-    font-size: 28px;
-    margin-top: 40px;
+    font-size: 32px;
+    margin-top: 56px;
+    margin-bottom: 28px;
+    color: #f3e2b3;
+    letter-spacing: 1px;
 }
 
 button {
-    padding: 15px 25px;
-    margin: 10px;
-    font-size: 18px;
-    border: none;
-    border-radius: 10px;
-    background: #c0392b;
-    color: white;
+    padding: 16px 34px;
+    margin: 12px;
+    font-size: 20px;
+    border-radius: 999px;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    background: linear-gradient(to bottom, #9b1c1c, #6f1111);
+    color: #fffaf0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 button.no {
-    background: #555;
+    background: linear-gradient(to bottom, #3b3b3b, #222);
+    color: #f3e2b3;
 }
 
 .result {
-    margin-top: 20px;
-    padding: 20px;
-    background: #222;
-    border-radius: 10px;
+    margin: 36px auto 0;
+    padding: 32px 24px 36px;
+    background: rgba(20, 20, 20, 0.92);
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    border-radius: 20px;
+    max-width: 520px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.result h2 {
+    color: #f3e2b3;
+    font-size: 34px;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+.result p {
+    font-size: 22px;
+    line-height: 1.8;
+    margin: 10px 0;
 }
 
 img {
     width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
-    margin-top: 10px;
+    max-width: 340px;
+    border-radius: 14px;
+    margin-top: 14px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 </style>
-
 </head>
 
 <body>
