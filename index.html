@@ -6,13 +6,16 @@
 
 <style>
 body {
-    font-family: "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
     text-align: center;
     margin: 0;
-    background:
-    radial-gradient(circle at center, rgba(255,255,255,0.06), transparent 60%),
-    linear-gradient(to bottom, #000000, #1a1a1a, #2a2a2a);
     color: #f5f1e8;
+
+    background-image: url("bg.jpg");
+    background-size: cover;        /* 画面いっぱい */
+    background-position: center;   /* 中央配置 */
+    background-repeat: no-repeat;
+    background-attachment: fixed;  /* スクロールしても固定 */
 }
 
 h1 {
@@ -27,9 +30,11 @@ h1 {
 }
 
 .container {
-    padding: 48px 24px 64px;
-    max-width: 900px;
-    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: 40px auto;
 }
 
 #question {
